@@ -1,0 +1,152 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.container {
+    font-family: "Inconsolata";
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 24px;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-right > h3 {
+    display: flex;
+    gap: 18px;
+}
+
+.finder {
+    position: relative;
+}
+
+.finder input {
+    width: 100%;
+    border: none;
+    background-color: #F4F4F4;
+    border-radius: 16px;
+    padding-left: 24px;
+    padding-block: 16px;
+    color: #2D2D2D;
+    outline: none;
+}
+
+.header-right-top {
+    display: flex;
+    gap: 16px;
+    border-right: 1px solid #E9E9E9;
+    align-items: center;
+    padding-right:26px ;
+}
+
+.header-right-bottom {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.found-icon {
+    position: absolute;
+    right: 24px;
+    top: 20px;
+}
+
+.on-off-btn {
+    background-color: red;
+    width: 40px;
+    height: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.on-off-btn::before {
+    position: absolute;
+    content: '';
+    background-color: black;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-block:3px;
+}
+
+.header-right-bottom  input:checked + .on-off-btn {
+    background-color: yellow;
+}
+
